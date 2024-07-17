@@ -23,8 +23,6 @@ unsigned int countBits(unsigned long long n) {
     int j = 64;
     int f_count = 0;
     std::vector<int> bit_vec;
-    //std::vector<int> f_bit_vec;
-    //f_bit_vec = recBitDec(n, bit_vec, j);
     bit_vec = recBitDec(n, j);
     for(int i = 0; i < 65; i++) {
         if (bit_vec[i] == 1) {
