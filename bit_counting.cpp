@@ -2,6 +2,18 @@
 #include <bitset>
 #include <array>
 
+std::array<unsigned int, 64> recBitDec(unsigned long long n, std::array<unsigned int, 64> f_array, int i){
+    //std::cout << i << std::endl;
+    int temp_num = n%2;
+    n = (n-temp_num)/2;
+    f_array[i - 1] = temp_num;
+    if(i <= 0){
+        return f_array;
+    } else {
+        recBitDec(n,f_array, i);
+    }
+}
+
 unsigned int countBits(unsigned long long n){
     int j = 64;
     int f_count = 0;
@@ -13,17 +25,6 @@ unsigned int countBits(unsigned long long n){
         }
     }
 return f_count;
-}
-
-std::array<unsigned int, 64> recBitDec(unsigned long long n, std::array<unsigned int, 64> f_array, int i){
-    int temp_num = n%2;
-    n = (n-temp_num)/2;
-    f_array[i - 1] = temp_num;
-    if(i <= 0){
-        return f_array;
-    } else {
-        recBitDec(n,f_array, i);
-    }
 }
 
 int main(){
