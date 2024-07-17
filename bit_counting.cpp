@@ -26,7 +26,7 @@ unsigned int countBits(unsigned long long n) {
     //std::vector<int> f_bit_vec;
     //f_bit_vec = recBitDec(n, bit_vec, j);
     bit_vec = recBitDec(n, j);
-    for(int i = 0; i < 64; i++) {
+    for(int i = 0; i < 65; i++) {
         if (bit_vec[i] == 1) {
             f_count++;
         }
@@ -35,9 +35,9 @@ unsigned int countBits(unsigned long long n) {
 }
 
 int main() {
-    unsigned long long num = 1234;
+    unsigned long long num = 7;
     std::cout << countBits(num) << std::endl;
-    if (countBits(num) == 5) {
+    if (countBits(num) == 3) {
         std::cout << "Sucess" << std::endl;
     }
     else {
